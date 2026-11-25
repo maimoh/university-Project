@@ -1,6 +1,4 @@
 import React from 'react'
-import Home from './Home';
-import Register from './Register';
 import { useNavigate } from 'react-router';
 import { useState } from 'react';
 
@@ -24,7 +22,7 @@ export default function Login() {
     }
 
     console.log("Form is valid!");
-    navigate('/Home')
+    navigate('/Profile')
   }
   return (
     <>
@@ -58,16 +56,18 @@ export default function Login() {
             </h4>
             <div className="col-md-12">
               <label htmlFor="email" className="form-label">
-                Email
+                University Email
               </label>
               <input
                 type="email"
                 className="form-control"
                 id="email"
                 required
+                pattern="[^@\s]+@std\.sci\.cu\.edu\.eg"
+                placeholder="name@std.sci.cu.edu.eg"
               />
               <div className="invalid-feedback">
-                Please provide a valid Email.
+                Please use your university email (@std.sci.cu.edu.eg).
               </div>
             </div>
 
